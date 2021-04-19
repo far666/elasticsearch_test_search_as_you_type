@@ -1,0 +1,17 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+搜尋:
+<input id="search_for" vaule="" />
+<hr>
+結果:
+<div id="result"></div>
+
+<script>
+    $("#search_for").change(function() {
+            var url = "./search_as_you_type.php?key=" + $(this).val();
+            console.log(url);
+            var result =$.get(url, function(data) {
+                    $("#result").html(data);
+                });
+        });
+</script>
+
